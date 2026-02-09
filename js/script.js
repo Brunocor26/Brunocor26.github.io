@@ -32,7 +32,7 @@ function initClock() {
 
 function renderXMB() {
     categories = Object.keys(cvData);
-    
+
     categoryBar.innerHTML = '';
     categories.forEach((key, index) => {
         const cat = cvData[key];
@@ -83,24 +83,24 @@ function renderItems() {
 function updateUI() {
     const catItems = document.querySelectorAll('.category-item');
     catItems.forEach((el, idx) => {
-        if(idx === currentCategoryIndex) el.classList.add('active');
+        if (idx === currentCategoryIndex) el.classList.add('active');
         else el.classList.remove('active');
     });
 
-    const CAT_WIDTH = 120; 
+    const CAT_WIDTH = 120;
     categoryBar.style.transform = `translateX(-${currentCategoryIndex * CAT_WIDTH}px)`;
 
 
     const contentItems = document.querySelectorAll('.content-item');
     contentItems.forEach((el, idx) => {
-        if(idx === currentItemIndex) el.classList.add('active');
+        if (idx === currentItemIndex) el.classList.add('active');
         else el.classList.remove('active');
     });
 
-    const ITEM_HEIGHT = 86; 
-    itemBar.style.transform = `translate(-50%, -${currentItemIndex * 85}px)`; 
-    
-    if(isInfoOpen) {
+    const ITEM_HEIGHT = 86;
+    itemBar.style.transform = `translate(-50%, -${currentItemIndex * 85}px)`;
+
+    if (isInfoOpen) {
         fillInfoPanel();
     }
 }
@@ -108,11 +108,11 @@ function updateUI() {
 function fillInfoPanel() {
     const cat = cvData[categories[currentCategoryIndex]];
     const item = cat.items[currentItemIndex];
-    if(!item || !item.details) return;
+    if (!item || !item.details) return;
 
     let html = `<h3>${item.title}</h3>`;
-    
-    if(item.details.type === 'text') {
+
+    if (item.details.type === 'text') {
         item.details.lines.forEach(line => html += `<p>${line}</p>`);
     } else if (item.details.type === 'list') {
         html += `<ul>`;
@@ -120,7 +120,7 @@ function fillInfoPanel() {
         html += `</ul>`;
     } else if (item.details.type === 'contact') {
         item.details.lines.forEach(c => {
-            if(c.link) html += `<p><strong>${c.label}:</strong> <a href="${c.link}" target="_blank">${c.value}</a></p>`;
+            if (c.link) html += `<p><strong>${c.label}:</strong> <a href="${c.link}" target="_blank">${c.value}</a></p>`;
             else html += `<p><strong>${c.label}:</strong> ${c.value}</p>`;
         });
     } else if (item.details.type === 'project') {
@@ -128,6 +128,11 @@ function fillInfoPanel() {
         html += `<ul>`;
         item.details.lines.forEach(line => html += `<li>${line}</li>`);
         html += `</ul>`;
+    } else if (item.details.type === 'download') {
+        html += `<p>${item.content}</p>`;
+        html += `<a href="${item.details.link}" download="${item.details.fileName}" class="download-btn">`;
+        html += `<i class="fa-solid fa-download"></i> Download PDF`;
+        html += `</a>`;
     }
 
     infoContent.innerHTML = html;
@@ -145,12 +150,12 @@ function closeInfo() {
 }
 
 document.addEventListener('keydown', (e) => {
-    if(isBooting) return;
+    if (isBooting) return;
 
-    switch(e.key) {
+    switch (e.key) {
         case 'ArrowLeft':
-            if(isInfoOpen) return;
-            if(currentCategoryIndex > 0) {
+            if (isInfoOpen) return;
+            if (currentCategoryIndex > 0) {
                 currentCategoryIndex--;
                 currentItemIndex = 0;
                 renderItems();
@@ -158,8 +163,8 @@ document.addEventListener('keydown', (e) => {
             }
             break;
         case 'ArrowRight':
-            if(isInfoOpen) return;
-            if(currentCategoryIndex < categories.length - 1) {
+            if (isInfoOpen) return;
+            if (currentCategoryIndex < categories.length - 1) {
                 currentCategoryIndex++;
                 currentItemIndex = 0;
                 renderItems();
@@ -167,28 +172,28 @@ document.addEventListener('keydown', (e) => {
             }
             break;
         case 'ArrowUp':
-            if(isInfoOpen) return;
-            if(currentItemIndex > 0) {
+            if (isInfoOpen) return;
+            if (currentItemIndex > 0) {
                 currentItemIndex--;
                 updateUI();
             }
             break;
         case 'ArrowDown':
-            if(isInfoOpen) return;
+            if (isInfoOpen) return;
             const cat = cvData[categories[currentCategoryIndex]];
-            if(currentItemIndex < cat.items.length - 1) {
+            if (currentItemIndex < cat.items.length - 1) {
                 currentItemIndex++;
                 updateUI();
             }
             break;
         case 'Enter':
         case ' ':
-            if(!isInfoOpen) openInfo();
+            if (!isInfoOpen) openInfo();
             else closeInfo();
             break;
         case 'Escape':
         case 'Backspace':
-            if(isInfoOpen) closeInfo();
+            if (isInfoOpen) closeInfo();
             break;
     }
 });
@@ -212,7 +217,7 @@ resize();
 let time = 0;
 function animate() {
     ctx.clearRect(0, 0, width, height);
-    
+
     const grad = ctx.createLinearGradient(0, 0, width, height);
     grad.addColorStop(0, '#050505');
     grad.addColorStop(1, '#1a1a1a');
@@ -221,12 +226,12 @@ function animate() {
 
     ctx.lineWidth = 2;
     ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
-    
-    for(let i = 0; i < 5; i++) {
+
+    for (let i = 0; i < 5; i++) {
         ctx.beginPath();
-        for(let x = 0; x < width; x+=10) {
-            const y = height/2 + Math.sin(x * 0.005 + time + i) * (50 + i * 20) + (i * 20);
-            if(x===0) ctx.moveTo(x, y);
+        for (let x = 0; x < width; x += 10) {
+            const y = height / 2 + Math.sin(x * 0.005 + time + i) * (50 + i * 20) + (i * 20);
+            if (x === 0) ctx.moveTo(x, y);
             else ctx.lineTo(x, y);
         }
         ctx.stroke();

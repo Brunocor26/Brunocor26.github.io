@@ -35,6 +35,16 @@ const cvData = {
                 icon: "fa-solid fa-user",
                 content: "Bruno Correia logged in.",
                 details: { type: "info", lines: ["Status: Online", "Role: Developer"] }
+            },
+            {
+                title: "Download CV",
+                icon: "fa-solid fa-file-pdf",
+                content: "Download my Curriculum Vitae.",
+                details: {
+                    type: "download",
+                    link: "assets/cv.pdf",
+                    fileName: "BrunoCorreia_CV.pdf"
+                }
             }
         ]
     },
