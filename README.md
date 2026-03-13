@@ -1,21 +1,28 @@
-# Retro PSP Portfolio
+# Bruno Correia — Portfolio
 
-A personal portfolio website with a retro PlayStation Portable (PSP) / PS1 aesthetic, featuring a custom XMB (Cross Media Bar) navigation system.
+Personal portfolio and CV website with a minimalist editorial aesthetic.
 
 ## Features
-- **Boot Sequence**: Nostalgic intro animation.
-- **XMB Interface**: Fully functional navigation with keyboard and mouse support.
-- **Responsive**: Adapts to different screen sizes.
-- **Dynamic Content**: Data loaded from `js/data.js` for easy updates.
+- **Minimalist design**: Cream background, typographic-first layout with Cormorant Garamond + JetBrains Mono.
+- **Fixed sidebar navigation**: Dot navigation with scroll-driven active states.
+- **Scroll reveal animations**: Sections animate in as they enter the viewport.
+- **Thesis highlight**: Featured section for the ongoing BSc final project on Universal Microservices.
+- **Dynamic content**: All CV data managed in `js/data.js` for easy updates.
+- **Responsive**: Adapts to mobile and desktop screens.
 
-## How to Run
-Simply open `index.html` in your web browser.
+## Sections
+- System (About, Contacts, Download CV)
+- Skills (Hard Skills, Soft Skills, Languages)
+- Education
+- Projects
+- Experience
 
 ## Technologies
 - HTML5
 - CSS3
 - JavaScript (Vanilla)
 - FontAwesome
+- Google Fonts (Cormorant Garamond, JetBrains Mono)
 
-## License
-This project is open source.
+## How to Run
+Open `index.html` in any browser, or serve with a local server.
