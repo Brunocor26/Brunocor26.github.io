@@ -114,7 +114,7 @@ const cvData = {
                         "- C Programming",
                         "- Functional Programming",
                         "- Computer Architecture",
-                        "- Embedded Systems"
+                        "- Distributed Systems"
                     ]
                 }
             }
@@ -183,6 +183,19 @@ const cvData = {
                 }
             },
             {
+                title: "KeyZero",
+                icon: "fa-solid fa-key",
+                content: "Hackathon project — Shift to Digital event",
+                details: {
+                    type: "project",
+                    link: "https://github.com/henriquelaia/KeyZero",
+                    lines: [
+                        "Collaboration: Bruno Correia & Henrique Laia",
+                        "Event: Shift to Digital"
+                    ]
+                }
+            },
+            {
                 title: "ChessFX",
                 icon: "fa-solid fa-chess",
                 content: "Chess Game Implementation",
@@ -193,6 +206,55 @@ const cvData = {
                         "Tech: Java, CSS",
                         "Framework: JavaFX (inferred)",
                         "Type: Desktop Application"
+                    ]
+                }
+            }
+        ]
+    },
+    reading: {
+        id: "reading",
+        icon: "fa-solid fa-book-open",
+        label: "Reading",
+        items: [
+            {
+                title: "Clean Code",
+                icon: "fa-solid fa-broom",
+                content: "A Handbook of Agile Software Craftsmanship",
+                details: {
+                    type: "book",
+                    cover: "https://covers.openlibrary.org/b/isbn/9780132350884-M.jpg",
+                    lines: [
+                        "Autor: Robert C. Martin",
+                        "Tema: Qualidade de software, código legível e manutenível",
+                        "Ideia-chave: Code is read far more than it is written"
+                    ]
+                }
+            },
+            {
+                title: "Segurança em Redes Informáticas",
+                icon: "fa-solid fa-shield-halved",
+                content: "Referência de cibersegurança em português",
+                details: {
+                    type: "book",
+                    cover: "https://www.booki.pt/userfiles/images/loja/produtos/principal/9789727228577.jpg",
+                    lines: [
+                        "Autor: André Zúquete",
+                        "Tema: Protocolos, criptografia, segurança de redes",
+                        "UC: Segurança Informática"
+                    ]
+                }
+            },
+            {
+                title: "The Practice of System and Network Administration",
+                icon: "fa-solid fa-server",
+                content: "2nd Edition — Limoncelli, Hogan & Chalup",
+                details: {
+                    type: "book",
+                    cover: "https://m.media-amazon.com/images/I/41gVVNSU4-L._AC_UF1000,1000_QL80_.jpg",
+                    lines: [
+                        "Autores: Limoncelli, Hogan & Chalup",
+                        "Tema: Administração de sistemas, Unix/Linux, gestão de serviços IT",
+                        "UC: Administração de Sistemas em Rede"
                     ]
                 }
             }
