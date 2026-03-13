@@ -6,29 +6,138 @@
     <title>Bruno Correia | Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div id="boot-screen">
-        <div class="boot-logo">Bruno Correia - Personal Portfolio</div>
-        <div class="sce-logo">Covilhã, Portugal</div>
-    </div>
-
-    <div id="clock">12:00</div>
-
-    <div id="xmb-container">
-        <div id="category-bar">
+    <nav id="sidebar">
+        <div id="nav-logo">BC</div>
+        <div id="nav-dots">
+            <a href="#thesis"     class="nav-dot active" data-label="Thesis"></a>
+            <a href="#system"     class="nav-dot"        data-label="System"></a>
+            <a href="#skills"     class="nav-dot"        data-label="Skills"></a>
+            <a href="#education"  class="nav-dot"        data-label="Education"></a>
+            <a href="#projects"   class="nav-dot"        data-label="Projects"></a>
+            <a href="#reading"    class="nav-dot"        data-label="Reading"></a>
+            <a href="#experience" class="nav-dot"        data-label="Experience"></a>
         </div>
+        <div id="nav-clock">--:--</div>
+    </nav>
 
-        <div id="item-bar">
-        </div>
+    <main id="content">
 
-        <div id="info-panel">
-            <div id="info-content-body" class="info-content">
+        <header id="hero">
+            <div class="hero-label">Portfolio / CV</div>
+            <h1>Bruno<br><em>Correia</em></h1>
+            <p class="hero-sub">Computer Engineering Finalist &nbsp;·&nbsp; UBI &nbsp;·&nbsp; Covilhã, Portugal</p>
+            <div class="hero-tags">
+                <span>OS</span>
+                <span>Low-level</span>
+                <span>Embedded systems</span>
+                <span>Cybersecurity</span>
             </div>
-        </div>
-    </div>
-    
+        </header>
+
+        <section id="thesis" class="section thesis-section">
+            <div class="thesis-badge">
+                <span class="thesis-pulse"></span>
+                Em curso · desde fev. 2026
+            </div>
+            <div class="thesis-inner">
+                <div class="thesis-meta">
+                    <span class="section-num">Projeto Final de Licenciatura</span>
+                    <div class="thesis-tags">
+                        <span>WebAssembly</span>
+                        <span>WASI</span>
+                        <span>Microserviços</span>
+                        <span>C++11</span>
+                        <span>Sistemas Distribuídos</span>
+                    </div>
+                </div>
+                <h2 class="thesis-title">Microserviços universais<br><em>para monitorização<br>de aplicações</em></h2>
+                <div class="thesis-body">
+                    <p>Investigação e implementação de uma arquitetura de microserviços universais (UMA) — unidades compiladas para <strong>WebAssembly</strong> executáveis em múltiplos ambientes (cloud, edge, browser) sem alteração do código base.</p>
+                    <div class="thesis-goals">
+                        <div class="thesis-goal">
+                            <i class="fa-solid fa-file-code"></i>
+                            <span>Contratos de serviço via JSON Schema / OpenAPI</span>
+                        </div>
+                        <div class="thesis-goal">
+                            <i class="fa-brands fa-webflow"></i>
+                            <span>Compilação C++11 → WASM com WASI</span>
+                        </div>
+                        <div class="thesis-goal">
+                            <i class="fa-solid fa-layer-group"></i>
+                            <span>Adaptadores para WAMR e browser</span>
+                        </div>
+                        <div class="thesis-goal">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>Avaliação de desempenho vs. microserviços tradicionais</span>
+                        </div>
+                        <div class="thesis-goal">
+                            <i class="fa-solid fa-network-wired"></i>
+                            <span>Running example em Raspberry Pi Nano — múltiplas arquiteturas de processador</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/Brunocor26/UMA_Monitors_Artifact" target="_blank" class="thesis-link">
+                        <i class="fa-brands fa-github"></i> Ver Artefacto
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="system" class="section">
+            <div class="section-header">
+                <span class="section-num">02</span>
+                <h2>System</h2>
+            </div>
+            <div class="section-body" id="system-body"></div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="section-header">
+                <span class="section-num">03</span>
+                <h2>Skills</h2>
+            </div>
+            <div class="section-body" id="skills-body"></div>
+        </section>
+
+        <section id="education" class="section">
+            <div class="section-header">
+                <span class="section-num">04</span>
+                <h2>Education</h2>
+            </div>
+            <div class="section-body" id="education-body"></div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="section-header">
+                <span class="section-num">05</span>
+                <h2>Projects</h2>
+            </div>
+            <div class="section-body" id="projects-body"></div>
+        </section>
+
+        <section id="reading" class="section">
+            <div class="section-header">
+                <span class="section-num">06</span>
+                <h2>Reading</h2>
+            </div>
+            <div class="section-body" id="reading-body"></div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="section-header">
+                <span class="section-num">07</span>
+                <h2>Experience</h2>
+            </div>
+            <div class="section-body" id="experience-body"></div>
+        </section>
+
+    </main>
+
     <script src="js/data.js"></script>
     <script src="js/script.js"></script>
 </body>
